@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+<sdf version="1.4">
+  <world name="default">
+
+    <physics type="ode">
+      <max_step_size>0.0001</max_step_size>
+      <real_time_factor>1</real_time_factor>
+      <real_time_update_rate>10000</real_time_update_rate>
+    </physics>
+
+    <scene>
+      <background>0.8 0.8 0.8 1</background>
+      <sky>
+        <clouds>
+          <speed>10</speed>
+          <humidity>1.0</humidity>
+          <mean_size>0.1</mean_size>
+        </clouds>
+      </sky>
+    </scene>
+
+    <ode>
+      <solver>
+        <type>world</type>
+        <iters>300</iters>
+      </solver>
+    </ode>
+
+    <include>
+      <uri>model://ground_plane</uri>
+    </include>
+
+    <include>
+      <uri>model://sun</uri>
+    </include>
+
+    <include>
+      <uri>model://construction_cone</uri>
+      <name>construction_cone_right</name>
+      <pose>-3.0 0 0 0 0 0</pose>
+    </include>
+
+    <include>
+      <uri>model://construction_cone</uri>
+      <name>construction_cone_left</name>
+      <pose>3.0 0 0 0 0 0</pose>
+    </include>
+
+  </world>
+</sdf>
