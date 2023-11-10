@@ -72,4 +72,6 @@
         </joint>
     </xacro:macro>
 
+    <xacro:rear_system prefix="left" y_offset="0.0556" yaw="0"/>
+    <xacro:rear_system prefix="right" y_offset="-0.0556" yaw="${pi}"/>
 </robot>
