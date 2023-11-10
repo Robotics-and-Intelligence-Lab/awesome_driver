@@ -7,4 +7,18 @@
             </geometry>
         </visual>
     </link>
+
+    <link name="left_motor">
+        <visual>
+            <geometry>
+                <mesh filename="package://awesome_driver/meshes/rear_actuator.stl"/>
+            </geometry>
+        </visual>
+    </link>
+
+    <joint name="left_motor_mnt" type="fixed">
+        <parent link="base_link"/>
+        <child link="left_motor"/>
+        <origin xyz="0 0.0556 0.0195" rpy="0 0 0"/>        
+    </joint>
 </robot>
