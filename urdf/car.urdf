@@ -13,6 +13,9 @@
             <geometry>
                 <mesh filename="package://awesome_driver/meshes/rear_actuator.stl"/>
             </geometry>
+            <material name="gray">
+                <color rgba="0.8 0.8 0.8 1"/>
+            </material>
         </visual>
     </link>
 
@@ -27,6 +30,9 @@
             <geometry>
                 <mesh filename="package://awesome_driver/meshes/left_rear_wheel.stl"/>
             </geometry>
+            <material name="black">
+                <color rgba="0.2 0.2 0.2 1"/>
+            </material>
         </visual>
     </link>
 
