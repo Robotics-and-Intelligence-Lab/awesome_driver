@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<robot name="car">
+    <link name="base_link">
+        <visual>
+            <geometry>
+                <mesh filename="package://awesome_driver/meshes/main_frame.stl"/>
+            </geometry>
+        </visual>
+    </link>
+</robot>
