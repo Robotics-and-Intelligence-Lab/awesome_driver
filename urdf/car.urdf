@@ -55,6 +55,11 @@
                 <sphere radius="0.01"/>
             </geometry>
         </visual>
+        <collision>
+            <geometry>
+                <sphere radius="0.01"/>
+            </geometry>
+        </collision>
     </link>
 
     <joint name="caster_joint" type="fixed">
