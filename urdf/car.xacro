@@ -29,6 +29,20 @@
         </collision>
     </link>    
 
+    <xacro:macro name="rear_system" params="prefix y_offset yaw">
+        <link name="${prefix}_motor">            
+        </link>
+
+        <link name="${prefix}_wheel">   
+        </link>
+
+        <joint name="${prefix}_motor_mnt" type="fixed">
+        </joint>
+        
+        <joint name="${prefix}_motor_wheel" type="continuous">
+        </joint>
+    </xacro:macro>
+
     <link name="left_motor">
         <visual>
             <geometry>
