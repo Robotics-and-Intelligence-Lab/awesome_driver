@@ -3,7 +3,7 @@
     <link name="base_link">
         <visual>
             <geometry>
-                <mesh filename="package://awesome_driver/meshes/main_frame.stl"/>
+                <mesh filename="package://awesome_driver/meshes/main_frame.obj"/>
             </geometry>
         </visual>
     </link>
