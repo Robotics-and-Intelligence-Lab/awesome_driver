@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+    <xacro:macro name="inertial_base">
+        <inertial>
+            <origin xyz="0.151 0 0.031" rpy="0.0 0.0 0.0" />
+            <!-- <mass value="0.618" /> -->
+            <mass value="0.1236" />
+            <!-- <inertia ixx="0.001" ixy="0" ixz="0.001" iyy="0.008" iyz="0" izz="0.008" /> -->
+            <inertia ixx="0.002" ixy="0" ixz="0.002" iyy="0.016" iyz="0" izz="0.016" />
+        </inertial>
+    </xacro:macro>
+
+    <xacro:macro name="inertial_motor">
+        <inertial>
+            <origin xyz="-3.377e-5 -0.022 -2.101e-4" rpy="0.0 0.0 0.0" />
+            <mass value="0.12" />
+            <inertia ixx="3.318e-5" ixy="-1.126e-7" ixz="0" iyy="1.793e-5" iyz="6.885e-7"
+                izz="3.306e-5" />
+        </inertial>
+    </xacro:macro>
+
+    <xacro:macro name="inertial_wheel">
+        <inertial>
+            <origin xyz="0 1.707e-4 7.239e-5" rpy="0.0 0.0 0.0" />
+            <mass value="0.078" />
+            <inertia ixx="3.101e-5" ixy="0" ixz="0" iyy="5.337e-5" iyz="0" izz="3.095e-5" />
+        </inertial>
+    </xacro:macro>
+
+    <xacro:property name="caster_m" value="0.1"/>
+    <xacro:property name="caster_r" value="0.01"/>
+    <xacro:property name="caster_i" value="${caster_m*caster_r*caster_r*2/5}"/>
+    
+    <xacro:macro name="inertial_caster">
+        <inertial>
+            <origin xyz="0 0 0" rpy="0 0 0"/>
+            <mass value="${caster_m}"/>
+            <inertia ixx="${caster_i}" ixy="0.0" ixz="0.0" iyy="${caster_i}" iyz="0.0" izz="${caster_i}"/>
+        </inertial>
+    </xacro:macro>
+
+</robot>
