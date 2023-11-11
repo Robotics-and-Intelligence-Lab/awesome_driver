@@ -39,6 +39,10 @@
     </link>   
     
     <gazebo reference="caster">
+        <mu>0.0</mu>
+        <mu2>0.0</mu2>
+        <slip1>1.0</slip1>
+        <slip2>1.0</slip2>
         <material>Gazebo/RedBright</material>
     </gazebo>
 
@@ -93,6 +97,12 @@
         </gazebo>
 
         <gazebo reference="${prefix}_wheel">
+            <mu>5</mu>
+            <mu2>5</mu2>
+            <fdir1>1 0 0</fdir1>
+            <dampingFactor>0.005</dampingFactor>
+            <minDepth>0</minDepth>
+            <maxVel>0.1</maxVel>
             <material>Gazebo/Grey</material>
         </gazebo>    
     </xacro:macro>
