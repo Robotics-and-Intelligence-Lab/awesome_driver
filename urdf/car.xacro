@@ -9,6 +9,8 @@
                 <mesh filename="package://awesome_driver/meshes/main_frame.obj"/>
             </geometry>
         </visual>
+
+        <xacro:inertial_base/>
     </link>
 
     <joint name="caster_joint" type="fixed">
@@ -28,6 +30,8 @@
                 <sphere radius="0.01"/>
             </geometry>
         </collision>
+
+        <xacro:inertial_caster/>
     </link>    
 
     <xacro:macro name="rear_system" params="prefix y_offset yaw">
@@ -40,6 +44,8 @@
                     <color rgba="0.8 0.8 0.8 1"/>
                 </material>
             </visual>
+
+            <xacro:inertial_motor/>
         </link>
 
         <link name="${prefix}_wheel">   
@@ -57,6 +63,8 @@
                 </geometry>
                 <origin xyz="0 0 0" rpy="${pi/2} 0 0"/>            
             </collision>
+
+            <xacro:inertial_wheel/>
         </link>
 
         <joint name="${prefix}_motor_mnt" type="fixed">

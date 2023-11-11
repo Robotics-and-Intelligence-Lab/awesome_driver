@@ -34,7 +34,7 @@
       <uri>model://sun</uri>
     </include>
 
-    <include>
+    <!-- <include>
       <uri>model://construction_cone</uri>
       <name>construction_cone_right</name>
       <pose>-3.0 0 0 0 0 0</pose>
@@ -44,7 +44,7 @@
       <uri>model://construction_cone</uri>
       <name>construction_cone_left</name>
       <pose>3.0 0 0 0 0 0</pose>
-    </include>
+    </include> -->
 
   </world>
 </sdf>
