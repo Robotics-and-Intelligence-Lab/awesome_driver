@@ -13,6 +13,10 @@
         <xacro:inertial_base/>
     </link>
 
+    <gazebo reference="base_link">
+        <pose>0 0 0.3 0 0 0</pose>
+    </gazebo>
+
     <joint name="caster_joint" type="fixed">
         <parent link="base_link"/>
         <child link="caster"/>
@@ -32,7 +36,11 @@
         </collision>
 
         <xacro:inertial_caster/>
-    </link>    
+    </link>   
+    
+    <gazebo reference="caster">
+        <material>Gazebo/RedBright</material>
+    </gazebo>
 
     <xacro:macro name="rear_system" params="prefix y_offset yaw">
         <link name="${prefix}_motor">            
@@ -79,6 +87,14 @@
             <axis xyz="0 1 0"/>
             <origin xyz="0 0.0264 -0.007" rpy="0 0 0"/>             
         </joint>
+
+        <gazebo reference="${prefix}_motor">
+            <material>Gazebo/Gold</material>
+        </gazebo>
+
+        <gazebo reference="${prefix}_wheel">
+            <material>Gazebo/Grey</material>
+        </gazebo>    
     </xacro:macro>
 
     <xacro:rear_system prefix="left" y_offset="0.0556" yaw="0"/>
