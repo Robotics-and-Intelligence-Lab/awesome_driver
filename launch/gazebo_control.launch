@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<launch>
+    <rosparam file="$(find awesome_driver)/config/car_control.yaml" command="load"/>
+    
+    <!-- load the controllers -->
+    <node name="control_spawner" pkg="controller_manager" type="spawner"  output="screen" respawn="false" ns="/car" 
+        args="joint_state_controller left_velocity_controller right_velocity_controller">        
+    </node>
+
+    <!-- convert joint states to TF transform for rviz, etc -->
+    <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher"  output="screen" respawn="false">
+        <remap from="/joint_states" to="/car/joint_states"/>
+    </node>
+
+</launch>

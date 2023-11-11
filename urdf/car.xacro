@@ -104,9 +104,26 @@
             <minDepth>0</minDepth>
             <maxVel>0.1</maxVel>
             <material>Gazebo/Grey</material>
-        </gazebo>    
+        </gazebo>
+        
+        <transmission name="${prefix}_transmission">
+            <type>transmission_interface/SimpleTransmission</type>
+            <joint name="${prefix}_motor_wheel">
+                <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+            </joint>
+            <actuator name="${prefix}_actuator">
+                <mechanicalReduction>1</mechanicalReduction>
+            </actuator>
+        </transmission>
     </xacro:macro>
 
     <xacro:rear_system prefix="left" y_offset="0.0556" yaw="0"/>
     <xacro:rear_system prefix="right" y_offset="-0.0556" yaw="${pi}"/>
+    
+    <gazebo>
+        <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
+            <robotNamespace>/car</robotNamespace>
+            <robotSimType>gazebo_ros_control/DefaultRobotHWSim</robotSimType>
+        </plugin>
+    </gazebo>
 </robot>
